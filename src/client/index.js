@@ -1,7 +1,4 @@
-import '@lwc/synthetic-shadow';
-import { createElement } from 'lwc';
-import MyApp from 'my/app';
+import app from 'my/app';
+import { buildCustomElementConstructor } from 'lwc';
 
-const app = createElement('my-app', { is: MyApp });
-// eslint-disable-next-line @lwc/lwc/no-document-query
-document.querySelector('#main').appendChild(app);
+customElements.define('my-app', buildCustomElementConstructor(app));
